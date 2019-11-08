@@ -23,7 +23,11 @@ const LandingPage: React.FC = () => {
         </div>
       </div>
       <div className={classes.rightContainer}>
-        <img src="/images/investment.svg" style={{ maxWidth: 300 }} />
+        <img
+          src="/images/investment.svg"
+          style={{ maxWidth: 300 }}
+          alt="investment"
+        />
       </div>
     </div>
   );
