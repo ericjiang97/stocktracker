@@ -17,7 +17,7 @@ const LandingPage: React.FC = () => {
 
           <div style={{ marginTop: "1.25rem" }}>
             <Button color="primary" variant="contained">
-              Login with Google
+              Sign In
             </Button>
           </div>
         </div>
