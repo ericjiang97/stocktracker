@@ -7,5 +7,8 @@ export const useStyles = makeStyles({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center"
+  },
+  message: {
+    marginTop: "1rem"
   }
 });

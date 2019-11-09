@@ -11,7 +11,11 @@ export const Loader: React.FC<LoaderProps> = props => {
   return (
     <div className={classes.root}>
       <CircularProgress color="primary" />
-      <Typography variant="h5" color="textPrimary">
+      <Typography
+        variant="body1"
+        color="textPrimary"
+        className={classes.message}
+      >
         {title}
       </Typography>
     </div>

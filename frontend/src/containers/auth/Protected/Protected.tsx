@@ -1,8 +1,9 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import { Redirect } from "react-router";
 
 import Authenticated from "../Authenticated";
 import Loader from "../../../components/Loader";
+import AuthenticationContext from "../../../contexts/AuthenticationContext";
 
 /**
  * This is a convenience component that combines the functionality
@@ -11,9 +12,11 @@ import Loader from "../../../components/Loader";
  * screen/forbidden screen will be shown as appropriate.
  */
 export const Protected: FC = ({ children }) => {
+  const { isLoaded } = useContext(AuthenticationContext);
+
   return (
     <>
-      <Loader title="Authenticating..." />
+      {!isLoaded && <Loader title="Authenticating..." />}
       <Authenticated inverted>
         <Redirect to="/" />
       </Authenticated>
