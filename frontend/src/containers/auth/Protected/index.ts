@@ -1,2 +1,2 @@
-import Protected from "./Protected";
+import { Protected } from './Protected';
 export default Protected;

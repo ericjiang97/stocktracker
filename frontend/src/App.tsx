@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 
 import useStyles from "./styles";
+import DashboardPage from "./pages/DashboardPage/DashboardPage";
 
 const App: React.FC = () => {
   const classes = useStyles();
@@ -11,7 +12,8 @@ const App: React.FC = () => {
   return (
     <div className={classes.root}>
       <Switch>
-        <Route path="/" component={LandingPage} />
+        <Route path="/" component={LandingPage} exact />
+        <Route path="/dashboard" component={DashboardPage} />
       </Switch>
     </div>
   );

@@ -17,3 +17,5 @@ export const Loader: React.FC<LoaderProps> = props => {
     </div>
   );
 };
+
+export default Loader;

@@ -27,3 +27,5 @@ export const Authenticated: React.FC<AuthenticatedProps> = ({
 
   return null;
 };
+
+export default Authenticated;
