@@ -10,12 +10,15 @@ import * as serviceWorker from "./serviceWorker";
 
 import muiTheme from "./config/theme";
 import "./index.css";
+import { AuthenticationProvider } from "./providers/AuthenticationProvider";
 
 ReactDOM.render(
   <MuiThemeProvider theme={muiTheme}>
-    <Router>
-      <App />
-    </Router>
+    <AuthenticationProvider>
+      <Router>
+        <App />
+      </Router>
+    </AuthenticationProvider>
   </MuiThemeProvider>,
   document.getElementById("root")
 );

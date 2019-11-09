@@ -2,6 +2,7 @@ import React from "react";
 
 import useStyles from "./styles";
 import { Typography, Button } from "@material-ui/core";
+import { auth } from "../../firebase";
 
 const LandingPage: React.FC = () => {
   const classes = useStyles();
@@ -16,7 +17,13 @@ const LandingPage: React.FC = () => {
           </Typography>
 
           <div style={{ marginTop: "1.25rem" }}>
-            <Button color="primary" variant="contained">
+            <Button
+              color="primary"
+              variant="contained"
+              onClick={() => {
+                auth.doSignInWithGoogle();
+              }}
+            >
               Sign In
             </Button>
           </div>
