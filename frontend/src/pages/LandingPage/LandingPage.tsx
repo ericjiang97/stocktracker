@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Redirect } from "react-router-dom";
+
+import { Typography, Button } from "@material-ui/core";
 
 import useStyles from "./styles";
-import { Typography, Button } from "@material-ui/core";
 import { auth } from "../../firebase";
+import { useAuth } from "../../firebase/firebase";
+import AuthenticationContext from "../../contexts/AuthenticationContext";
 
 const LandingPage: React.FC = () => {
   const classes = useStyles();
+  const { isLoaded, user } = useContext(AuthenticationContext);
 
+  if (isLoaded && user) {
+    return <Redirect to="/dashboard" />;
+  }
   return (
     <div className={classes.root}>
       <div className={classes.leftContainer}>
