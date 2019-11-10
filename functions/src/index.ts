@@ -1,4 +1,7 @@
-import * as functions from 'firebase-functions';
+import * as functions from "firebase-functions";
+import admin from "firebase-admin";
+
+admin.initializeApp(functions.config().firebase);
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
@@ -6,3 +9,12 @@ import * as functions from 'firebase-functions';
 // export const helloWorld = functions.https.onRequest((request, response) => {
 //  response.send("Hello from Firebase!");
 // });
+
+exports.createUser = functions.auth.user().onCreate(user => {
+  let db = admin.firestore();
+  db.collection("users")
+    .doc(user.uid)
+    .set({
+      ...user
+    });
+});
