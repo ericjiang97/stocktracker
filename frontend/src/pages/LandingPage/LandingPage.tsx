@@ -5,7 +5,6 @@ import { Typography, Button } from "@material-ui/core";
 
 import useStyles from "./styles";
 import { auth } from "../../firebase";
-import { useAuth } from "../../firebase/firebase";
 import AuthenticationContext from "../../contexts/AuthenticationContext";
 
 const LandingPage: React.FC = () => {
