@@ -5,10 +5,15 @@ admin.initializeApp(functions.config().firebase);
 
 export const createUser = functions.auth.user().onCreate(async user => {
   const db = admin.firestore();
+
+  const { uid, email, displayName, emailVerified } = user;
   await db
     .collection("users")
     .doc(user.uid)
     .set({
-      ...user
+      uid,
+      email,
+      displayName,
+      emailVerified
     });
 });
