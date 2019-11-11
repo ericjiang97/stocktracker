@@ -11,7 +11,7 @@ admin.initializeApp(functions.config().firebase);
 // });
 
 exports.createUser = functions.auth.user().onCreate(user => {
-  let db = admin.firestore();
+  const db = admin.firestore();
   db.collection("users")
     .doc(user.uid)
     .set({
