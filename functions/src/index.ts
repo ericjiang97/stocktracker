@@ -1,21 +1,4 @@
-import * as functions from "firebase-functions";
-import admin from "firebase-admin";
+import { createUser } from "./functions/createUser";
 
-admin.initializeApp(functions.config().firebase);
-
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
-
-exports.createUser = functions.auth.user().onCreate(async user => {
-  const db = admin.firestore();
-  await db
-    .collection("users")
-    .doc(user.uid)
-    .set({
-      ...user
-    });
-});
+// Create user functions
+exports.createUser = createUser;
