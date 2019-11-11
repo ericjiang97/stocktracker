@@ -10,9 +10,10 @@ admin.initializeApp(functions.config().firebase);
 //  response.send("Hello from Firebase!");
 // });
 
-exports.createUser = functions.auth.user().onCreate(user => {
+exports.createUser = functions.auth.user().onCreate(async user => {
   const db = admin.firestore();
-  db.collection("users")
+  await db
+    .collection("users")
     .doc(user.uid)
     .set({
       ...user
