@@ -1,4 +1,4 @@
-import React, { useContext, useState, MouseEventHandler } from "react";
+import React, { useContext } from "react";
 
 import useStyles from "./styles";
 import {
